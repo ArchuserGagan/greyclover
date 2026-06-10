@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreyCloverLabs - Company Brain & Knowledge Infrastructure</title>
+    
+    <!-- SEO Optimization -->
+    <meta name="description" content="We build custom AI-powered Company Brains that unify your scattered documents, SOPs, and internal workflows into an instant-answering workspace.">
+    <meta name="keywords" content="Company Brain, Knowledge Base, AI Retrieval, RAG, Enterprise AI, SOP Automation">
+    <meta name="author" content="GreyCloverLabs">
+    
+    <!-- CSS Design System -->
+    <link rel="stylesheet" href="index.css">
+    
+    <!-- Three.js Import Map -->
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+            "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+        }
+    }
+    </script>
+</head>
+<body>
+
+    <!-- Three.js Canvas Background -->
+    <div id="matrix-canvas-container"></div>
+    <div class="canvas-overlay"></div>
+
+    <!-- Header / Nav -->
+    <header class="header" id="main-header">
+        <div class="nav-container">
+            <a href="#" class="logo" id="nav-logo">
+                <div class="logo-dot"></div>
+                GREYCLOVER<span>LABS</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#" class="nav-link active" id="link-hero">Home</a></li>
+                <li><a href="#cost" class="nav-link" id="link-cost">Lost Knowledge</a></li>
+                <li><a href="#brain" class="nav-link" id="link-brain">Company Brain</a></li>
+                <li><a href="#how" class="nav-link" id="link-how">How It Works</a></li>
+                <li><a href="#capabilities" class="nav-link" id="link-capabilities">Capabilities</a></li>
+                <li><a href="#why" class="nav-link" id="link-why">Why Us</a></li>
+            </ul>
+            <button class="nav-btn btn-trigger-modal" id="btn-header-call">Book Discovery Call</button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero section" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-label">
+                    <div class="pulse-dot"></div>
+                    <span>GREYCLOVERLABS • Knowledge Infrastructure for Modern Businesses</span>
+                </div>
+                <h1 class="hero-title" id="hero-headline">
+                    <span>Your Company's Knowledge.</span>
+                    <span class="accent-text">Unified.</span>
+                </h1>
+                <p class="hero-description" id="hero-subheadline">
+                    We build AI-powered Company Brains that turn documents, SOPs, and internal knowledge into instant answers.
+                </p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary btn-trigger-modal" id="btn-hero-book">Book Discovery Call</button>
+                    <a href="#brain" class="btn btn-secondary" id="btn-hero-demo">View Demo</a>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <span>Scroll to explore</span>
+        </div>
+    </section>
+
+    <!-- Section 1: The Hidden Cost of Lost Knowledge -->
+    <section class="section reveal" id="cost">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" id="title-cost">The Hidden Cost of Lost Knowledge</h2>
+                <p class="section-subtitle">Fragmented documentation and siloed expertise drain efficiency and drain capital. We solve this leak at the source.</p>
+            </div>
+            
+            <div class="stats-grid">
+                <!-- Card 1 -->
+                <div class="glass-card glow-card stat-card" id="card-lost-time">
+                    <div>
+                        <div class="stat-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                        </div>
+                        <h3 class="stat-header">Lost Productivity</h3>
+                    </div>
+                    <p class="stat-body">Employees waste hours searching for information across scattered systems, repeating efforts and stalling work.</p>
+                </div>
+                <!-- Card 2 -->
+                <div class="glass-card glow-card stat-card" id="card-bottlenecks">
+                    <div>
+                        <div class="stat-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                        </div>
+                        <h3 class="stat-header">Key-Person Dependency</h3>
+                    </div>
+                    <p class="stat-body">Critical processes become dependent on specific individuals, creating bottlenecks and severe execution risks.</p>
+                </div>
+                <!-- Card 3 -->
+                <div class="glass-card glow-card stat-card" id="card-onboarding">
+                    <div>
+                        <div class="stat-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="8.5" cy="7" r="4"></circle><line x1="20" y1="8" x2="20" y2="14"></line><line x1="23" y1="11" x2="17" y2="11"></line></svg>
+                        </div>
+                        <h3 class="stat-header">Slow Onboarding</h3>
+                    </div>
+                    <p class="stat-body">Bringing new hires up to speed takes weeks instead of days, delaying time-to-value and taxing senior staff.</p>
+                </div>
+                <!-- Card 4 -->
+                <div class="glass-card glow-card stat-card" id="card-drain">
+                    <div>
+                        <div class="stat-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17z"></path><path d="M10 9l5 3-5 3V9z"></path></svg>
+                        </div>
+                        <h3 class="stat-header">Knowledge Drain</h3>
+                    </div>
+                    <p class="stat-body">Crucial expertise and operational memory walk out the door forever when employees leave the company.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2: What Is A Company Brain? -->
+    <section class="section reveal" id="brain">
+        <div class="container">
+            <div class="brain-split">
+                <!-- Text Content Left -->
+                <div class="brain-text-col">
+                    <h2 class="section-title" id="title-brain">What Is A Company Brain?</h2>
+                    <p class="section-subtitle" style="margin-bottom: 2rem;">
+                        A Company Brain is an AI system trained specifically on your business knowledge. It aggregates fragmented sources into a unified intelligence engine.
+                    </p>
+                    <ul class="brain-info-list">
+                        <li class="brain-info-item" id="brain-item-sop">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                            <span>Standard Operating Procedures (SOPs)</span>
+                        </li>
+                        <li class="brain-info-item" id="brain-item-docs">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                            <span>Company Documentation & Policies</span>
+                        </li>
+                        <li class="brain-info-item" id="brain-item-workflows">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                            <span>Internal Workflows & Process Records</span>
+                        </li>
+                        <li class="brain-info-item" id="brain-item-training">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                            <span>Training Material & Employee Experience</span>
+                        </li>
+                    </ul>
+                    <p class="section-subtitle" style="font-weight: 500; color: var(--text-primary);">
+                        Ask a question. Receive an answer instantly.
+                    </p>
+                </div>
+                
+                <!-- Terminal UI Right -->
+                <div class="terminal-col">
+                    <div class="terminal-window" id="brain-terminal">
+                        <div class="terminal-header">
+                            <div class="terminal-dots">
+                                <div class="terminal-dot dot-red"></div>
+                                <div class="terminal-dot dot-yellow"></div>
+                                <div class="terminal-dot dot-green"></div>
+                            </div>
+                            <div class="terminal-title">GREYCLOVER_BRAIN_V1.0.1</div>
+                            <div style="width: 42px;"></div> <!-- Spacer -->
+                        </div>
+                        <div class="terminal-body" id="terminal-screen">
+                            <div class="terminal-line">
+                                <span class="terminal-prompt">></span>
+                                <span class="terminal-text">System initialization successful. Ready for query.</span>
+                            </div>
+                        </div>
+                        <div class="terminal-options">
+                            <div class="terminal-option-title">Select a query simulation:</div>
+                            <div class="terminal-buttons-list">
+                                <button class="terminal-btn" data-query="onboarding">How do we onboard new developers?</button>
+                                <button class="terminal-btn" data-query="security">Where is the security policy?</button>
+                                <button class="terminal-btn" data-query="holiday">What is the process for holiday requests?</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: How It Works -->
+    <section class="section reveal" id="how">
+        <div class="container">
+            <div class="section-header" style="text-align: center; margin: 0 auto 5rem auto;">
+                <h2 class="section-title" id="title-how">How It Works</h2>
+                <p class="section-subtitle" style="margin: 0 auto;">Our structured process transforms fragmented data into an active enterprise intelligence system.</p>
+            </div>
+            
+            <div class="timeline" id="how-timeline">
+                <!-- Step 1 -->
+                <div class="timeline-step" id="step-collect">
+                    <div class="timeline-node">01</div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">Collect</h3>
+                        <p class="timeline-desc">We gather your company knowledge from files, Slack logs, databases, SOPs, and employee logs without disrupting workflows.</p>
+                    </div>
+                </div>
+                <!-- Step 2 -->
+                <div class="timeline-step" id="step-structure">
+                    <div class="timeline-node">02</div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">Structure</h3>
+                        <p class="timeline-desc">We clean, index, and contextualize information, establishing relations between nodes to structure the data layer.</p>
+                    </div>
+                </div>
+                <!-- Step 3 -->
+                <div class="timeline-step" id="step-train">
+                    <div class="timeline-node">03</div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">Train</h3>
+                        <p class="timeline-desc">We create a secure, private retrieval model tailored to your business rules, terminology, and permissions.</p>
+                    </div>
+                </div>
+                <!-- Step 4 -->
+                <div class="timeline-step" id="step-deploy">
+                    <div class="timeline-node">04</div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">Deploy</h3>
+                        <p class="timeline-desc">We deliver instant-access tools like workspace search and automated slack responders, making company intelligence immediate.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: Capabilities -->
+    <section class="section reveal" id="capabilities">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" id="title-capabilities">Capabilities</h2>
+                <p class="section-subtitle">We design custom integrations that power everyday business actions and preserve organizational IP.</p>
+            </div>
+            
+            <div class="cap-grid">
+                <!-- Card 1 -->
+                <div class="glass-card glow-card cap-card" id="cap-search">
+                    <h3 class="cap-title">Document Search</h3>
+                    <p class="cap-desc">Find exactly what you need in seconds. Search documents, sheets, slides, and transcripts with semantic accuracy, not just keywords.</p>
+                </div>
+                <!-- Card 2 -->
+                <div class="glass-card glow-card cap-card" id="cap-assistant">
+                    <h3 class="cap-title">Employee Assistant</h3>
+                    <p class="cap-desc">Offload routine requests. Let employees query the Brain for company policies, code styles, and operational protocols in real time.</p>
+                </div>
+                <!-- Card 3 -->
+                <div class="glass-card glow-card cap-card" id="cap-retention">
+                    <h3 class="cap-title">Knowledge Retention</h3>
+                    <p class="cap-desc">Stop experience leakage. As team members construct documentation and solve problems, their wisdom is preserved for future operations.</p>
+                </div>
+                <!-- Card 4 -->
+                <div class="glass-card glow-card cap-card" id="cap-onboarding">
+                    <h3 class="cap-title">Onboarding Support</h3>
+                    <p class="cap-desc">Fast-track new employees. Provide a private tutor that answers structural questions and points them to relevant resources instantly.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 5: Why GreyCloverLabs -->
+    <section class="section reveal" id="why">
+        <div class="container">
+            <div class="why-container">
+                <h2 class="section-title" id="title-why">Why GreyCloverLabs</h2>
+                <p class="why-hero-text">
+                    We don't sell generic software. We construct secure enterprise intelligence systems built entirely around your business.
+                </p>
+                
+                <div class="comparison-grid">
+                    <!-- Traditional Col -->
+                    <div class="comparison-col" id="why-traditional">
+                        <div class="comparison-header">Traditional Software / SaaS</div>
+                        <div class="comparison-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FF5F56" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                            <span>Generic answers lacking core business context</span>
+                        </div>
+                        <div class="comparison-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FF5F56" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                            <span>Fragmented tools that require constant maintenance</span>
+                        </div>
+                        <div class="comparison-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FF5F56" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                            <span>Data security vulnerabilities on public networks</span>
+                        </div>
+                    </div>
+                    
+                    <!-- GreyClover Col -->
+                    <div class="comparison-col highlight" id="why-greyclover">
+                        <div class="comparison-header">GreyCloverLabs Company Brain</div>
+                        <div class="comparison-item active">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent-green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            <span>Tailored perfectly to how your team actually works</span>
+                        </div>
+                        <div class="comparison-item active">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent-green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            <span>Unifies all internal document nodes into a single flow</span>
+                        </div>
+                        <div class="comparison-item active">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent-green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            <span>Highly secure hosting that preserves data sovereignty</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="section reveal" id="cta">
+        <div class="container">
+            <div class="cta-container">
+                <h2 class="cta-title" id="cta-headline">Turn Company Knowledge Into Competitive Advantage</h2>
+                <p class="cta-subtitle">Establish a unified logic layer for your organization today.</p>
+                <button class="btn btn-primary btn-trigger-modal" id="btn-cta-schedule">Schedule Consultation</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-info">
+                    <a href="#" class="footer-logo">
+                        <div class="logo-dot"></div>
+                        GREYCLOVER<span>LABS</span>
+                    </a>
+                    <p style="margin-top: 1rem; color: var(--text-secondary);">
+                        Building robust AI-powered Company Brains that retain knowledge and power operations for growing businesses.
+                    </p>
+                </div>
+                
+                <div class="footer-links">
+                    <div>
+                        <div class="footer-col-title">Navigation</div>
+                        <ul class="footer-list">
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#cost">Lost Knowledge</a></li>
+                            <li><a href="#brain">Company Brain</a></li>
+                            <li><a href="#capabilities">Capabilities</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="footer-col-title">Contact</div>
+                        <ul class="footer-list">
+                            <li><a href="mailto:hello@greycloverlabs.com" id="footer-email">hello@greycloverlabs.com</a></li>
+                            <li><a href="https://linkedin.com/company/greycloverlabs" target="_blank" rel="noopener" id="footer-linkedin">LinkedIn</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <span id="footer-copy-text">© 2026 GreyCloverLabs. All rights reserved.</span>
+                <span>Designed for Intelligence Infrastructure.</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Scheduler Modal -->
+    <div class="modal-overlay" id="scheduler-modal">
+        <div class="modal-window">
+            <div class="modal-header">
+                <h3 class="modal-title">Schedule a Consultation</h3>
+                <button class="modal-close" id="btn-close-modal">&times;</button>
+            </div>
+            
+            <!-- Form View -->
+            <form class="modal-body" id="booking-form">
+                <div class="form-group">
+                    <label class="form-label" for="book-name">Name</label>
+                    <input class="form-input" type="text" id="book-name" required placeholder="Alexander Wright">
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="book-email">Business Email</label>
+                    <input class="form-input" type="email" id="book-email" required placeholder="alex@company.com">
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label" for="book-date">Preferred Date</label>
+                        <input class="form-input" type="date" id="book-date" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Time Slot</label>
+                        <div class="time-slots" id="slots-container">
+                            <div class="time-slot" data-time="09:00 AM">09:00 AM</div>
+                            <div class="time-slot" data-time="01:00 PM">01:00 PM</div>
+                            <div class="time-slot" data-time="04:00 PM">04:00 PM</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 2rem;">
+                    <button type="submit" class="btn btn-primary" style="width: 100%;" id="btn-submit-booking">Book Discovery Call</button>
+                </div>
+            </form>
+            
+            <!-- Success View -->
+            <div class="modal-success-view" id="booking-success">
+                <div class="success-icon-container">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </div>
+                <h4 class="success-title">Consultation Requested</h4>
+                <p class="success-desc">
+                    Thank you. We've reserved your slot. A calendar invitation and brief questionnaire have been sent to <span id="confirmed-email" style="color: var(--accent-green); font-weight: 600;">alex@company.com</span>.
+                </p>
+                <button class="btn btn-secondary" style="margin-top: 2rem; width: 100%;" id="btn-success-close">Return to Site</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Core App Interaction Logic (including modular elements loader) -->
+    <script type="module" src="matrix.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
