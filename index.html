@@ -11,7 +11,7 @@
     <meta name="author" content="GreyCloverLabs">
     
     <!-- CSS Design System -->
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="css/index.css">
     
     <!-- Three.js Import Map -->
     <script type="importmap">
@@ -36,15 +36,23 @@
                 <div class="logo-dot"></div>
                 GREYCLOVER<span>LABS</span>
             </a>
-            <ul class="nav-links">
+            <ul class="nav-links" id="nav-links-menu">
                 <li><a href="#" class="nav-link active" id="link-hero">Home</a></li>
                 <li><a href="#cost" class="nav-link" id="link-cost">Lost Knowledge</a></li>
                 <li><a href="#brain" class="nav-link" id="link-brain">Company Brain</a></li>
                 <li><a href="#how" class="nav-link" id="link-how">How It Works</a></li>
                 <li><a href="#capabilities" class="nav-link" id="link-capabilities">Capabilities</a></li>
                 <li><a href="#why" class="nav-link" id="link-why">Why Us</a></li>
+                <li class="mobile-only-item">
+                    <button class="nav-btn btn-trigger-modal mobile-menu-btn" id="btn-mobile-call">Book Discovery Call</button>
+                </li>
             </ul>
             <button class="nav-btn btn-trigger-modal" id="btn-header-call">Book Discovery Call</button>
+            <button class="mobile-nav-toggle" id="mobile-nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
         </div>
     </header>
 
@@ -427,7 +435,7 @@
     </div>
 
     <!-- Core App Interaction Logic (including modular elements loader) -->
-    <script type="module" src="matrix.js"></script>
-    <script src="app.js"></script>
+    <script type="module" src="js/matrix.js"></script>
+    <script src="js/app.js"></script>
 </body>
 </html>

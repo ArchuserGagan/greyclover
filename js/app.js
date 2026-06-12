@@ -35,6 +35,37 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     /* ==========================================================================
+       1b. Mobile Navigation Drawer Toggle
+       ========================================================================== */
+    const mobileToggle = document.getElementById('mobile-nav-toggle');
+    const navLinksMenu = document.getElementById('nav-links-menu');
+
+    if (mobileToggle && navLinksMenu) {
+        mobileToggle.addEventListener('click', () => {
+            const isActive = mobileToggle.classList.toggle('active');
+            navLinksMenu.classList.toggle('active');
+            mobileToggle.setAttribute('aria-expanded', isActive);
+            
+            if (isActive) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = '';
+            }
+        });
+
+        // Close mobile drawer when clicking a link or clicking the action button inside it
+        const menuItems = navLinksMenu.querySelectorAll('a, button');
+        menuItems.forEach(item => {
+            item.addEventListener('click', () => {
+                mobileToggle.classList.remove('active');
+                navLinksMenu.classList.remove('active');
+                mobileToggle.setAttribute('aria-expanded', 'false');
+                document.body.style.overflow = '';
+            });
+        });
+    }
+
+    /* ==========================================================================
        2. Scroll Reveal Animations (Slide & Fade in)
        ========================================================================== */
     const revealElements = document.querySelectorAll('.reveal');
